@@ -46,7 +46,7 @@ def doCheck(empass, delim = None):
             print(colored('LIVE!', 'green') + " " + empass + " " + colored('Login Success!', 'blue'))
             doSave('MOONTON_LIVE.txt', empass)
         elif wibuJson['message'] == 'Error_PasswdError':
-            print(colored('VALID!', 'blue') + " " + email + " " + colored('Wrong Password!', 'red'))
+            print(colored('VALID!', 'blue') + " " + empass + " " + colored('Wrong Password!', 'red'))
             doSave('MOONTON_VALID.txt', email)
         elif wibuJson['message'] == 'Error_NoAccount':
             print(colored('DIE!', 'red') + " " + empass + " " + colored('Email Account Not Found!', 'yellow'))
