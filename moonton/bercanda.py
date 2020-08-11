@@ -54,12 +54,6 @@ def doCheck(empass, delim = None):
         elif wibuJson['message'] == 'Error_SignConflict':
             print(colored('ERROR!', 'red') + " " + empass + " " + colored('Account Sign IN Error!', 'yellow'))
             doSave('MOONTON_DIE.txt', empass)
-        elif wibuJson['message'] == 'Error_PwdErrorTooMany':
-            print(colored('UNCHECK!', 'yellow') + " " + empass + " " + colored('Too many wrong password!', 'red'))
-            doSave('MOONTON_UNCHECK.txt', empass)
-        else:
-            print(colored('UNCHECK!', 'yellow') + " " + empass)
-            doSave('MOONTON_UNCHECK.txt', empass)
     except Exception as e:
         print('OOPS! ' + str(e))
 
